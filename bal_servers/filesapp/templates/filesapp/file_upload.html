@@ -1,0 +1,9 @@
+{% extends 'front/template.html' %}
+{% block content_title %}{{ title }}{% endblock %}
+{% block content_body %}
+    <form class="form_news" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.file }}<br>
+        <button class="btn btn-success" type="submit">Загрузить</button>
+    </form>
+{% endblock %}

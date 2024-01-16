@@ -1,0 +1,15 @@
+{% load static %}
+{% include 'main/static_loads.html' %}
+{% block static_loads %}{% endblock %}
+{% block message %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="message {{ message.tags }}">
+                    {{ message|safe }}
+                    <a href="#" class="close">✖️</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

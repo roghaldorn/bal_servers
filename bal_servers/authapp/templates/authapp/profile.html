@@ -1,0 +1,33 @@
+{% extends 'front/template.html' %}
+
+{% block content_title %}{{ title }}{% endblock %}
+
+{% block content_body %}
+    {% load static %}
+    <section>
+        <details open>
+            <summary><iconify-icon icon="game-icons:player-base"></iconify-icon>Основные данные</summary>
+            <div>
+                {% if user_profile.avatar %}
+                    <img class="avatar-container" src="{{ user_profile.avatar.url }}"/>
+                {% endif %}
+                <p>Имя пользователя:<br><r class="hit-the-floor">{{ user_profile.username }}</r></p>
+                <p>E-mail:<br><r class="hit-the-floor">{{ user_profile.email }}</r></p>
+                <p>Имя:<br><r class="hit-the-floor">{{ user_profile.first_name }}</r></p>
+                <p>Фамилия:<br><r class="hit-the-floor">{{ user_profile.last_name }}</r></p>
+            </div>
+        </details>
+        <details>
+            <summary><iconify-icon icon="fluent-mdl2:key-phrase-extraction"></iconify-icon>Дополнительно</summary>
+            <div>
+                <p>ID:<br>{{ user_profile.id }}</p>
+                <p>Последний вход:<br>{{ user_profile.last_login }}</p>
+                <p>Статус модератора:<br>{{ user_profile.is_staff }}</p>
+                <p>Аккаунт активен:<br>{{ user_profile.is_active }}</p>
+                <p>Дата создания:<br>{{ user_profile.date_joined }}</p>
+                <p>Возраст:<br>{{ user_profile.age }}</p>
+            </div>
+        </details>
+    </section>
+    <br><a href="{% url 'authapp:edit' %}" class="btn btn-warning" >Редактировать профиль</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'front/template.html' %}
+
+{% block content_title %}{{ title }}{% endblock %}
+
+{% block content_body %}
+    <div class="div_forms_user">
+        <h1>{{ title }}</h1>
+        <form class="form_user" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p class="forms_nesesary">{{ form.username }}</p>
+            <p class="forms_nesesary">{{ form.email }}</p>
+            <p class="forms_nesesary">{{ form.age }}</p>
+            <p class="forms_nesesary">{{ form.avatar }}</p>
+            <p class="forms_nesesary">{{ form.first_name }}</p>
+            <p class="forms_nesesary">{{ form.last_name }}</p>
+            <button class="btn btn-success" type="submit">Подтвердить изменения</button>
+        </form>
+    </div>
+{% endblock %}

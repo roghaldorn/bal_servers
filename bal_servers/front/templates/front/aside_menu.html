@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+{% block aside_menu %}
+
+    <aside>
+        <a href="{% url 'home' %}" <span class="logo"><img src="{% static 'front/img/logo_text.png' %}" alt="logo">BAL_SERVERS</span></a>
+        <h3>Навигация:</h3>
+        <ul>
+            {% if user.is_authenticated %}
+                <a class="menu" href="{% url 'authapp:profile' %}"><li><iconify-icon icon="ri:user-fill" width="15"></iconify-icon>{{ user.username }}</li></a>
+                {% if '/auth/' in request.path %}
+                    <form method="post" action="{% url 'authapp:logout' %}">
+                        {% csrf_token %}
+                        <button class="button_menu_plus" href="{% url 'authapp:logout' %}"><li>Выйти</li></button>
+                    </form>
+                    <a class="menu_plus" href="{% url 'authapp:edit' %}"><li>Редактировать профиль</li></a>
+                {% endif %}
+            {% else %}
+                <a class="menu" href="{% url 'authapp:login' %}"><li><iconify-icon icon="material-symbols:login"></iconify-icon>Войти</li></a>
+            {% endif %}
+            {% if user.is_superuser %}
+                <a class="menu" href="{% url 'admin:index' %}"><li><iconify-icon icon="dashicons:admin-tools"></iconify-icon>Администрирование</li></a>
+            {% endif %}
+            <a class="menu" href="{% url 'home' %}"><li><iconify-icon icon="material-symbols:castle" width="15"></iconify-icon>Главная</li></a>
+            <a class="menu" href=""><li><iconify-icon icon="fluent-mdl2:news"></iconify-icon>Новости</li></a>
+            {% if '/news/' in request.path and user.is_authenticated %}
+                <a class="menu_plus" href=""><li>Добавить запись</li></a>
+            {% endif %}
+            <a class="menu" href=""><li><iconify-icon icon="zondicons:servers" width="15"></iconify-icon>Сервера</li></a>
+            <a class="menu" href="{% url 'file_index' %}"><li><iconify-icon icon="solar:folder-with-files-bold" width="15"></iconify-icon>Файлы</li></a>
+        </ul>
+    </aside>
+{% endblock %}

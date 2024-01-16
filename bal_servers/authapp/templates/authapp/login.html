@@ -1,0 +1,16 @@
+{% extends 'front/template.html' %}
+
+{% block content_title %}{{ title }}{% endblock %}
+
+{% block content_body %}
+    <div class="div_forms_user">
+        <h1>{{ title }}</h1>
+        <form class="form_user" method="post">
+            {% csrf_token %}
+            <p class="forms_nesesary">{{ form.username }}</p>
+            <p class="forms_nesesary">{{ form.password }}</p>
+            <button class="btn btn-success" type="submit">Войти</button>
+            <a href="{% url 'authapp:register' %}" class="btn btn-info">Создать аккаунт</a>
+        </form>
+    </div>
+{% endblock %}

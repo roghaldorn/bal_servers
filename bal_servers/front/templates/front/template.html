@@ -1,0 +1,20 @@
+{% include 'front/aside_menu.html' %}
+{% include 'front/static_loads.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block content_title %}{% endblock %}</title>
+    {% block css_loads %}{% endblock %}
+
+</head>
+<body>
+    {% block aside_menu %}{% endblock %}
+    {% block message %}{% endblock %}
+    <main>
+        {% block content_body %}{% endblock %}
+    </main>
+    {% block js_loads %}{% endblock %}
+</body>
+</html>

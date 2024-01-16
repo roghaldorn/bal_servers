@@ -1,0 +1,106 @@
+body {
+    background: #c0bfbf;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    padding: 2.5%;
+    height: 100vh;
+    color: #f0f3f3;
+    border-right: 2px solid #727070;
+}
+
+aside img {
+    width: 55px;
+    float: left;
+    padding: 4.5%;
+}
+
+aside .logo {
+    font-size: 20px;
+    margin-left: 10%;
+    font-weight: bold;
+    position: relative;
+    top: -6px;
+}
+
+aside .menu {
+    font: 18px Arial;
+    list-style: none;
+    color: #f0f3f3;
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: transform 600ms ease;
+}
+
+aside .menu_plus {
+    font: 15px "Leelawadee UI";
+    list-style: none;
+    color: #a9efef;
+    display: block;
+    margin-top: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: transform 600ms ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+aside h3 {
+    margin-top: 10%;
+    font-size: 16px;
+}
+
+main .features {
+    float: left;
+    color: #141515;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {font-size: 50px;}
+main .features p {max-width: 400px; margin: 20px auto}
+
+main .news_field {
+    background: #f6f2ba;
+    width: 600px;
+    margin: 20px 34%;
+    text-align: center;
+    border-radius: 9px;
+}
+
+main .form_news {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+main .news_detail {
+    border: 2px solid #727070;
+    float: left;
+    color: #141515;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+aside .button_menu_plus {
+    padding: 0;
+    border: none;
+    background: none;
+    font: 15px "Leelawadee UI";
+    list-style: none;
+    color: #a9efef;
+    display: block;
+    margin-top: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: transform 600ms ease;
+}
